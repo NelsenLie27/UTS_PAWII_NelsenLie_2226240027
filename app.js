@@ -6,6 +6,9 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var NelsenLieRouter = require('./routes/NelsenLie');
+
+const mongoose = recuire('mongoose');
 
 var app = express();
 
