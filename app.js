@@ -12,6 +12,15 @@ const mongoose = recuire('mongoose');
 
 var app = express();
 
+app.use (function(req,res,next) {
+  res.setHeader("Accces-Control-Allow-Origin","*");
+  res.setHeader(
+    "Acces-Control-Allow-Methods",
+    "Origin, X-Requested-With, Content-Type, Accept");
+  res.setHeader("Access-Control-Allow-Methods","GET, POST, PUT, DELETE, OPTIONS");
+  next();
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
